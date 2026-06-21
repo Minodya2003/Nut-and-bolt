@@ -1,0 +1,2646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nut & Bolt Lanka — Wholesale Fasteners | Hose Clamps, Hex Bolts, Zinc Bolts</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== CSS VARIABLES & DESIGN SYSTEM ===== */
+    :root {
+      --font-primary: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+
+      /* Colors (Light Mode Default) */
+      --primary: #dc2626; /* Deep Red */
+      --primary-hover: #b91c1c;
+      --primary-rgb: 220, 38, 38;
+      --accent: #f97316; /* Orange */
+      --success: #10b981;
+      --success-hover: #059669;
+      --warning: #f59e0b;
+      
+      --bg-app: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-glass: rgba(255, 255, 255, 0.75);
+      --bg-header: #0f172a;
+      
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --text-white: #ffffff;
+      
+      --border-color: #e2e8f0;
+      --border-focus: #cbd5e1;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+      --shadow-glow: 0 0 20px rgba(220, 38, 38, 0.15);
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark Mode overrides */
+    [data-theme="dark"] {
+      --bg-app: #090d16;
+      --bg-card: #131b2e;
+      --bg-glass: rgba(19, 27, 46, 0.8);
+      --bg-header: #070a12;
+      
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-light: #64748b;
+      
+      --border-color: #1e293b;
+      --border-focus: #334155;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 25px rgba(220, 38, 38, 0.25);
+    }
+
+    /* ===== RESET & GENERAL ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-primary);
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      outline: none;
+    }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    .glass-panel {
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+    }
+
+    /* ===== TOP UTILITY BAR ===== */
+    .top-bar {
+      background-color: #f8fafc;
+      color: #475569;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .top-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-bar-left {
+      display: flex;
+      gap: 20px;
+    }
+    .top-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .top-bar-right {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .theme-toggle {
+      background: none;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 4px 10px;
+      color: #475569;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      color: var(--text-main);
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: var(--text-main);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid #e2e8f0;
+      transition: background-color 0.3s ease;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .logo span {
+      color: var(--primary);
+    }
+    .logo-badge {
+      font-size: 10px;
+      background: rgba(220, 38, 38, 0.1);
+      border: 1px solid rgba(220, 38, 38, 0.2);
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .search-container {
+      flex: 1;
+      max-width: 600px;
+      position: relative;
+    }
+    .search-input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .search-input {
+      width: 100%;
+      height: 48px;
+      padding: 12px 16px 12px 48px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-full);
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .search-input::placeholder {
+      color: #94a3b8;
+    }
+    .search-input:focus {
+      background: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+      outline: none;
+    }
+    .search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+      width: 18px;
+      height: 18px;
+    }
+    
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--text-white);
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      box-shadow: var(--shadow-glow);
+    }
+    .btn-outline {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* ===== HERO BANNER SECTION ===== */
+    /* ===== HERO ===== */
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeSlideRight {
+      from { opacity: 0; transform: translateX(-28px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes badgePop {
+      0%   { transform: scale(0.7) translateY(10px); opacity: 0; }
+      70%  { transform: scale(1.05); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes statSlide {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes kenBurns {
+      0%   { transform: scale(1);    }
+      100% { transform: scale(1.06); }
+    }
+    @keyframes shimmerLine {
+      0%   { transform: scaleX(0); opacity: 0; }
+      100% { transform: scaleX(1); opacity: 1; }
+    }
+
+    .hero {
+      position: relative;
+      min-height: 540px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
+
+    /* background photo layer */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      animation: kenBurns 12s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    /* dark overlay — stronger on left, transparent on right */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(10, 10, 20, 0.92) 0%,
+        rgba(10, 10, 20, 0.80) 48%,
+        rgba(10, 10, 20, 0.20) 100%
+      );
+      z-index: 1;
+    }
+
+    /* red accent diagonal line */
+    .hero-diagonal {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(220, 38, 38, 0.18) 0%,
+        transparent 55%
+      );
+      z-index: 2;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 80px 32px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content {
+      animation: fadeSlideRight 0.75s ease both;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #dc2626, #f97316);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+      animation: badgePop 0.6s ease 0.1s both;
+      box-shadow: 0 4px 16px rgba(220,38,38,0.4);
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-heading);
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -2px;
+      color: #fff;
+      margin-bottom: 8px;
+      animation: fadeSlideIn 0.7s ease 0.15s both;
+    }
+
+    .hero-accent-line {
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(to right, #dc2626, #f97316);
+      border-radius: 99px;
+      margin: 16px 0 20px;
+      transform-origin: left;
+      animation: shimmerLine 0.6s ease 0.5s both;
+    }
+
+    .hero-content p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      max-width: 500px;
+      margin-bottom: 28px;
+      animation: fadeSlideIn 0.7s ease 0.3s both;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+      animation: fadeSlideIn 0.7s ease 0.4s both;
+    }
+
+    .hero-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #dc2626, #f97316);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(220,38,38,0.45);
+      transition: all 0.25s;
+      letter-spacing: 0.3px;
+    }
+    .hero-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(220,38,38,0.55);
+    }
+
+    .hero-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s;
+    }
+    .hero-btn-outline:hover {
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.6);
+      transform: translateY(-2px);
+    }
+
+    /* stat pills */
+    .hero-stats {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px;
+      padding: 12px 18px;
+      animation: statSlide 0.5s ease both;
+    }
+    .stat-item:nth-child(1) { animation-delay: 0.5s; }
+    .stat-item:nth-child(2) { animation-delay: 0.65s; }
+    .stat-item:nth-child(3) { animation-delay: 0.8s; }
+    .stat-number {
+      font-size: 22px;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      background: linear-gradient(135deg, #f87171, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 500;
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+
+
+
+    /* ===== CATEGORY SLIDER ===== */
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .vehicle-types {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: -30px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 10;
+    }
+    .vehicle-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .vehicle-card:hover, .vehicle-card.active {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md), 0 0 15px rgba(220, 38, 38, 0.1);
+    }
+    .vehicle-card.active {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(220, 38, 38, 0.05) 100%);
+    }
+    .vehicle-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .vehicle-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 28px;
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+
+    /* ===== SIDEBAR FILTERS ===== */
+    .filter-sidebar {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      height: fit-content;
+      position: sticky;
+      top: 96px;
+      box-shadow: var(--shadow-sm);
+    }
+    .filter-section {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .filter-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .filter-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-main);
+    }
+    
+    .cat-list {
+      list-style: none;
+    }
+    .cat-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: var(--transition);
+      margin-bottom: 4px;
+    }
+    .cat-item:hover, .cat-item.active {
+      background-color: rgba(220, 38, 38, 0.05);
+      color: var(--primary);
+    }
+    .cat-item.active {
+      font-weight: 700;
+    }
+    .cat-count {
+      font-size: 11px;
+      background: var(--bg-app);
+      padding: 2px 6px;
+      border-radius: var(--radius-full);
+      color: var(--text-light);
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .checkbox-label:hover {
+      color: var(--text-main);
+    }
+    .checkbox-label input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .price-range-inputs {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .price-input {
+      width: 100%;
+      height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      background-color: var(--bg-app);
+      color: var(--text-main);
+    }
+    .price-range-inputs span {
+      color: var(--text-light);
+    }
+
+    /* ===== CONTENT AREA ===== */
+    .content-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 16px 24px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+    .results-count {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+    .results-count strong {
+      color: var(--text-main);
+    }
+    .sort-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sort-select {
+      height: 38px;
+      padding: 0 12px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* PRODUCT GRID */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    
+    .product-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(220, 38, 38, 0.2);
+    }
+    
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 5;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+    }
+    .badge-brand-new { background-color: var(--success); }
+    .badge-reconditioned { background-color: var(--warning); }
+    .badge-used { background-color: #3b82f6; }
+    
+    .card-img-wrap {
+      height: 180px;
+      background: linear-gradient(135deg, var(--bg-app) 0%, rgba(220, 38, 38, 0.03) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-meta {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+      color: var(--text-main);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      height: 42px;
+    }
+    .card-compat {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      background: var(--bg-app);
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      text-align: center;
+    }
+    .card-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+    }
+    .card-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .btn-view {
+      padding: 6px 12px;
+      background-color: var(--bg-app);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .product-card:hover .btn-view {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: var(--text-white);
+    }
+
+    /* ===== DETAIL MODAL ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-container {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 800px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(20px);
+      transition: transform 0.25s ease;
+      position: relative;
+    }
+    .modal-overlay.active .modal-container {
+      transform: translateY(0);
+    }
+    
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background-color: var(--bg-app);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: var(--transition);
+      z-index: 10;
+    }
+    .modal-close-btn:hover {
+      background-color: var(--primary);
+      color: var(--text-white);
+      border-color: var(--primary);
+    }
+
+    .modal-body {
+      padding: 32px;
+    }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .modal-img-wrap {
+      height: 280px;
+      background: linear-gradient(135deg, var(--bg-app) 0%, rgba(220, 38, 38, 0.03) 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 110px;
+      border: 1px solid var(--border-color);
+    }
+    .modal-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    
+    .modal-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .modal-price {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+    .specs-table td {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 13.5px;
+    }
+    .specs-table td.lbl {
+      color: var(--text-muted);
+      font-weight: 600;
+      width: 40%;
+    }
+    .specs-table td.val {
+      color: var(--text-main);
+      font-weight: 700;
+    }
+    
+    .seller-box {
+      background: var(--bg-app);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    .seller-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .seller-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .seller-location {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    .action-row {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-wa-order {
+      background-color: #25d366;
+      color: #fff;
+      flex: 1;
+      justify-content: center;
+    }
+    .btn-wa-order:hover {
+      background-color: #20ba5a;
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.25);
+    }
+    .btn-call {
+      background-color: #3b82f6;
+      color: #fff;
+      flex: 1;
+      justify-content: center;
+    }
+    .btn-call:hover {
+      background-color: #2563eb;
+    }
+
+    /* ===== POST AN AD MODAL ===== */
+    .post-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group.full {
+      grid-column: span 2;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    .form-control {
+      width: 100%;
+      height: 42px;
+      padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      background-color: var(--bg-card);
+    }
+    textarea.form-control {
+      height: 90px;
+      resize: none;
+    }
+    
+    /* ===== TOAST NOTIFICATION ===== */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--success);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      z-index: 300;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .toast.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: var(--bg-header);
+      color: var(--text-light);
+      padding: 60px 0 20px;
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 16px;
+    }
+    .footer-logo span {
+      color: var(--primary);
+    }
+    .footer-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .footer-links h4 {
+      font-family: var(--font-heading);
+      color: var(--text-white);
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+    .footer-links ul {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 992px) {
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+      .filter-sidebar {
+        position: static;
+        margin-bottom: 20px;
+      }
+      .vehicle-types {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-badge-wrap {
+        display: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .vehicle-types {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .header-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+        gap: 12px;
+      }
+      .search-container {
+        width: 100%;
+      }
+      .header-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-body {
+        padding: 20px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* ===== QUOTATION FORM ===== */
+    .quotation-section {
+      padding: 60px 20px;
+      background-color: var(--bg-app);
+    }
+    .quotation-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .quotation-header {
+      margin-bottom: 30px;
+    }
+    .quotation-header h2 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .quotation-header p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .quotation-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .quotation-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .quotation-item-header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 38px;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .q-col-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .quotation-items-container {
+      margin-bottom: 12px;
+    }
+    .quotation-item-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 38px;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .quotation-btn-remove {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: var(--transition);
+    }
+    .quotation-btn-remove:hover {
+      background: rgba(239, 68, 68, 0.2);
+    }
+    .quotation-btn-add {
+      width: 100%;
+      padding: 12px;
+      background: transparent;
+      border: 1px dashed var(--primary);
+      color: var(--primary);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-bottom: 24px;
+    }
+    .quotation-btn-add:hover {
+      background: rgba(220, 38, 38, 0.05);
+    }
+    .quotation-btn-submit {
+      width: 100%;
+      padding: 16px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .quotation-btn-submit:hover {
+      background: #1d4ed8;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+    @media (max-width: 768px) {
+      .quotation-row {
+        grid-template-columns: 1fr;
+      }
+      .quotation-item-header {
+        display: none;
+      }
+      .quotation-item-row {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        background: rgba(0,0,0,0.02);
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-color);
+      }
+      .quotation-btn-remove {
+        width: 100%;
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">📍 76/2/2 Udugampola, Gampaha</div>
+        <div class="top-bar-item">📞 070 263 9292</div>
+      </div>
+      <div class="top-bar-right" style="display: flex; gap: 12px; align-items: center;">
+        <button id="adminLoginBtn" class="theme-toggle" onclick="promptAdminLogin()">
+          🔑 Admin Login
+        </button>
+        <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+          🌙 Dark Mode
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN PASSWORD MODAL -->
+  <div class="modal-overlay" id="adminModal" style="z-index: 10000;">
+    <div class="modal-container" style="max-width: 380px;">
+      <button class="modal-close-btn" onclick="closeAdminModal()">✕</button>
+      <div class="modal-body" style="text-align: center; padding: 10px;">
+        <div style="font-size: 36px; margin-bottom: 12px;">🛡️</div>
+        <h2 class="modal-title" style="margin-bottom: 8px;">Admin Authentication</h2>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Please enter the admin password to unlock management operations.</p>
+        <form onsubmit="verifyAdminPassword(event)">
+          <div style="margin-bottom: 16px;">
+            <input type="password" id="adminPasswordInput" class="form-control" placeholder="Enter Password" style="text-align: center; font-size: 16px; letter-spacing: 2px;" required>
+          </div>
+          <div id="adminAuthError" style="color: #ef4444; font-size: 12px; margin-bottom: 12px; display: none; font-weight: bold;">
+            ❌ Incorrect password!
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; height: 42px;">
+            Verify & Unlock
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a href="#" class="logo" style="gap: 8px;">
+        <img src="logo.png" alt="Nut and Bolt" style="height: 54px; width: auto; object-fit: contain;">
+        <div class="logo-badge" style="background: rgba(249, 115, 22, 0.15); border-color: var(--accent); color: var(--accent);">WHOLESALE</div>
+      </a>
+      <div class="search-container">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" class="search-input" id="searchBar" placeholder="Search bolts & clamps (e.g. Hex Bolt M8, Hose Clamp 1/2, Zinc Plated...)" oninput="filterProducts()">
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <button class="btn btn-outline" onclick="openPostAdModal()">Add Product</button>
+        <a class="btn btn-primary" href="https://wa.me/94702639292?text=Hi!%20I'm%20looking%20to%20buy%20wholesale%20bolts%20and%20clamps." target="_blank">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <!-- Background photo -->
+    <img src="hero_bg.png" alt="Industrial Fasteners" class="hero-bg-img">
+    <!-- Overlays -->
+    <div class="hero-overlay"></div>
+    <div class="hero-diagonal"></div>
+
+    <div class="hero-inner">
+      <!-- LEFT: Text content -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">🔩 Sri Lanka's #1 Wholesale Fastener Supplier</div>
+        <h1>Nuts, Bolts &amp;<br>Industrial Clamps</h1>
+        <div class="hero-accent-line"></div>
+        <p>Premium quality industrial grade hose clamps, wire clamps, hex head bolts, zinc plated &amp; black high tensile bolts. Direct importer pricing with island-wide bulk delivery. <strong style="color:#fb923c;">Minimum order: 100 units.</strong></p>
+        <div class="hero-cta-row">
+          <button class="hero-btn-primary" onclick="window.open('https://wa.me/94702639292?text=Hi!%20I%20want%20to%20place%20a%20wholesale%20order.', '_blank')">💬 WhatsApp Order</button>
+          <button class="hero-btn-outline" onclick="document.getElementById('productGrid').scrollIntoView({behavior:'smooth'})">View Products ↓</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Product Types</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Min 1 kg</span>
+            <span class="stat-label">Wholesale Only</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Island</span>
+            <span class="stat-label">Wide Delivery</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- APP CONTENT CONTAINER -->
+  <main class="container" style="margin-top: 40px;">
+
+    <!-- MAIN GRID LAYOUT -->
+    <div class="main-layout">
+      
+      <!-- FILTER SIDEBAR -->
+      <aside class="filter-sidebar">
+        <div class="filter-section">
+          <h4 class="filter-title">Product Category</h4>
+          <ul class="cat-list">
+            <li class="cat-item active" onclick="setPartCategory('all', this)">
+              <span>🔧 All Products</span>
+              <span class="cat-count" id="count-all">0</span>
+            </li>
+            <li class="cat-item" onclick="setPartCategory('accessories', this)">
+              <span>🔩 Hose Clamps</span>
+              <span class="cat-count" id="count-accessories">0</span>
+            </li>
+            <li class="cat-item" onclick="setPartCategory('suspension', this)">
+              <span>🔗 Wire Hose Clamps</span>
+              <span class="cat-count" id="count-suspension">0</span>
+            </li>
+            <li class="cat-item" onclick="setPartCategory('engine', this)">
+              <span>⚙️ Hex Bolts</span>
+              <span class="cat-count" id="count-engine">0</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="filter-section">
+          <h4 class="filter-title">Bolt Type</h4>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="brand-hex" checked onchange="filterProducts()"> Hex Head (Standard)
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="brand-zinc" checked onchange="filterProducts()"> Zinc Plated
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" id="brand-black" checked onchange="filterProducts()"> Black High Tensile
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h4 class="filter-title">Price Range (LKR)</h4>
+          <div class="price-range-inputs">
+            <input type="number" class="price-input" id="price-min" placeholder="Min" oninput="filterProducts()">
+            <span>-</span>
+            <input type="number" class="price-input" id="price-max" placeholder="Max" oninput="filterProducts()">
+          </div>
+        </div>
+      </aside>
+
+      <!-- RESULTS AREA -->
+      <section class="results-area">
+        <div class="content-header">
+          <div class="results-count">
+            Showing <strong id="currentCount">0</strong> products
+          </div>
+          <div class="sort-wrapper">
+            <span>Sort by:</span>
+            <select class="sort-select" id="sortSelect" onchange="filterProducts()">
+              <option value="latest">Latest Uploads</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div class="product-grid" id="productGrid">
+          <!-- Dynamic Products Go Here -->
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeDetailModal()">✕</button>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div>
+            <div class="modal-img-wrap" id="modalImg">🛠️</div>
+          </div>
+          <div>
+            <div class="modal-badge" id="modalBadge">Brand New</div>
+            <h2 class="modal-title" id="modalTitle">Part Name Here</h2>
+            <div class="modal-price" id="modalPrice">LKR 0</div>
+            
+            <table class="specs-table">
+              <tr>
+                <td class="lbl">Category</td>
+                <td class="val" id="modalCategory">-</td>
+              </tr>
+              <tr>
+                <td class="lbl">Compatible Vehicle</td>
+                <td class="val" id="modalCompat">-</td>
+              </tr>
+              <tr>
+                <td class="lbl">Part Number / OEM</td>
+                <td class="val" id="modalPartNo">-</td>
+              </tr>
+              <tr>
+                <td class="lbl">Brand</td>
+                <td class="val" id="modalBrand">-</td>
+              </tr>
+              <tr>
+                <td class="lbl">Stock Quantity</td>
+                <td class="val" id="modalQty">-</td>
+              </tr>
+            </table>
+
+            <div style="background: rgba(249, 115, 22, 0.1); border: 1px solid var(--accent); padding: 10px 12px; border-radius: var(--radius-sm); margin: 15px 0; font-size: 12px; font-weight: 600; color: #c2410c; display: flex; align-items: center; gap: 8px;">
+              ⚠️ Wholesale Order Notice: Minimum order — Bolts: 1 kg per size | Hose Clamps: 100 pcs per size.
+            </div>
+
+            <div id="modalEditForm" style="display: none; background: var(--bg-app); border: 1px solid var(--border-color); padding: 16px; border-radius: var(--radius-md); margin-bottom: 16px;">
+              <h4 style="font-size: 13px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; gap: 6px;">✏️ Edit Price & Stock</h4>
+              <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <div style="flex: 1;">
+                  <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Price (LKR)</label>
+                  <input type="number" id="editPrice" class="form-control" style="height: 36px; padding: 4px 8px; font-size: 13px;">
+                </div>
+                <div style="flex: 1;">
+                  <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px;">Stock Qty</label>
+                  <input type="number" id="editQty" class="form-control" style="height: 36px; padding: 4px 8px; font-size: 13px;" min="0">
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                <button class="btn btn-outline" style="padding: 6px 12px; font-size: 12px; border-radius: 4px; color: var(--text-main); border-color: var(--border-color);" type="button" onclick="toggleEditMode(false)">Cancel</button>
+                <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px; border-radius: 4px;" type="button" onclick="saveEditProduct()">Save</button>
+              </div>
+            </div>
+
+            <div class="seller-box">
+              <div class="seller-title">Seller Information</div>
+              <div class="seller-name" id="modalSeller">-</div>
+              <div class="seller-location" id="modalLocation">-</div>
+            </div>
+
+            <div class="action-row">
+              <button class="btn btn-wa-order" id="modalWaBtn">
+                💬 WhatsApp Order
+              </button>
+              <button class="btn btn-call" id="modalCallBtn">
+                📞 Call Seller
+              </button>
+            </div>
+            <div class="action-row" style="margin-top: 12px; gap: 10px;">
+              <button class="btn" style="background-color: #3b82f6; color: #fff; flex: 1; justify-content: center; gap: 8px;" id="modalEditBtn">
+                ✏️ Edit Listing
+              </button>
+              <button class="btn" style="background-color: #ef4444; color: #fff; flex: 1; justify-content: center; gap: 8px;" id="modalDeleteBtn">
+                🗑️ Delete Listing
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POST AD MODAL -->
+  <div class="modal-overlay" id="postAdModal">
+    <div class="modal-container" style="max-width: 600px;">
+      <button class="modal-close-btn" onclick="closePostAdModal()">✕</button>
+      <div class="modal-body">
+        <h2 class="modal-title" style="margin-bottom: 20px;">Post a Spare Part Ad</h2>
+        
+        <form id="postAdForm" onsubmit="handlePostAd(event)">
+          <div class="post-form-grid">
+            <div class="form-group full">
+              <label>Part Title</label>
+              <input type="text" class="form-control" id="formTitle" placeholder="e.g. Toyota Aqua Radiator Fan Assembly" required>
+            </div>
+            
+            <div class="form-group">
+              <label>Category</label>
+              <select class="form-control" id="formCategory" required>
+                <option value="engine">Engine & Drivetrain</option>
+                <option value="electrical">Electricals & Sensors</option>
+                <option value="suspension">Suspension & Brakes</option>
+                <option value="body">Body Parts & Panels</option>
+                <option value="accessories">Accessories & Polish</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label>Vehicle Type</label>
+              <select class="form-control" id="formVehicle" required>
+                <option value="car">Car</option>
+                <option value="suv">SUV & Jeep</option>
+                <option value="van">Van & Bus</option>
+                <option value="bike">Motorbike</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label>Condition</label>
+              <select class="form-control" id="formCondition" required>
+                <option value="Brand New">Brand New</option>
+                <option value="Reconditioned">Reconditioned</option>
+                <option value="Used">Used</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Brand</label>
+              <input type="text" class="form-control" id="formBrand" placeholder="e.g. Denso, Bosch" required>
+            </div>
+
+            <div class="form-group">
+              <label>Price (LKR)</label>
+              <input type="number" class="form-control" id="formPrice" placeholder="e.g. 18500" required>
+            </div>
+
+            <div class="form-group">
+              <label>Stock Qty</label>
+              <input type="number" class="form-control" id="formQty" placeholder="e.g. 5" min="1" required>
+            </div>
+
+            <div class="form-group">
+              <label>Compatible Cars</label>
+              <input type="text" class="form-control" id="formCompat" placeholder="e.g. Toyota Aqua 2012-2018" required>
+            </div>
+            
+            <div class="form-group full">
+              <label>Item Icon / Emoji</label>
+              <input type="text" class="form-control" id="formIcon" placeholder="Choose a relevant emoji (e.g. ⚙️, 🔌, 🔋, 🚗)" required>
+            </div>
+
+            <div class="form-group full">
+              <label>Seller Name</label>
+              <input type="text" class="form-control" id="formSeller" placeholder="Your Name or Shop Name" required>
+            </div>
+
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" class="form-control" id="formPhone" placeholder="0771234567" required>
+            </div>
+
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" class="form-control" id="formLocation" placeholder="e.g. Nugegoda, Colombo" required>
+            </div>
+          </div>
+          
+          <div style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 12px;">
+            <button type="button" class="btn btn-outline" onclick="closePostAdModal()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit Listing</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toastNotification">
+    <span>✅ Listing published successfully!</span>
+  </div>
+
+  <!-- QUOTATION SECTION -->
+  <section class="quotation-section" id="quotation">
+    <div class="container">
+      <div class="quotation-card">
+        <div class="quotation-header">
+          <h2>Request a Free Quotation</h2>
+          <p>Fill in your requirements — we'll reply within 2 hours</p>
+        </div>
+        
+        <form id="quotationForm" onsubmit="submitQuotation(event)">
+          <div class="quotation-row">
+            <div class="quotation-group">
+              <label>Your Name</label>
+              <input type="text" id="quoteName" class="form-control" placeholder="Amal Perera" required>
+            </div>
+            <div class="quotation-group">
+              <label>Phone / WhatsApp</label>
+              <input type="text" id="quotePhone" class="form-control" placeholder="070 263 9292" required>
+            </div>
+          </div>
+          
+          <div class="quotation-row">
+            <div class="quotation-group">
+              <label>Company / Project</label>
+              <input type="text" id="quoteCompany" class="form-control" placeholder="ABC Construction Ltd">
+            </div>
+            <div class="quotation-group">
+              <label>Email (Optional)</label>
+              <input type="email" id="quoteEmail" class="form-control" placeholder="amal@example.com">
+            </div>
+          </div>
+
+          <div class="quotation-group" style="margin-top: 10px;">
+            <label>Items Required</label>
+            <div class="quotation-item-header">
+              <div class="q-col-label">PRODUCT</div>
+              <div class="q-col-label">SIZE</div>
+              <div class="q-col-label">QTY</div>
+              <div></div>
+            </div>
+            <div id="quotationItemsContainer" class="quotation-items-container">
+              <!-- Item Rows -->
+              <div class="quotation-item-row">
+                <select class="form-control q-product" required>
+                  <option value="" disabled selected>Select Product...</option>
+                  <option value="Hex Head Bolt">Hex Head Bolt</option>
+                  <option value="Zinc Plated Hex Bolt">Zinc Plated Hex Bolt</option>
+                  <option value="Black High Tensile Bolt">Black High Tensile Bolt</option>
+                  <option value="Hose Clamp">Hose Clamp</option>
+                  <option value="Wire Hose Clamp">Wire Hose Clamp</option>
+                  <option value="Other">Other</option>
+                </select>
+                <input type="text" class="form-control q-size" placeholder="e.g. M10" required>
+                <input type="number" class="form-control q-qty" placeholder="50" required min="1">
+                <button type="button" class="quotation-btn-remove" onclick="this.parentElement.remove()">✕</button>
+              </div>
+              <div class="quotation-item-row">
+                <select class="form-control q-product" required>
+                  <option value="" disabled selected>Select Product...</option>
+                  <option value="Hex Head Bolt">Hex Head Bolt</option>
+                  <option value="Zinc Plated Hex Bolt">Zinc Plated Hex Bolt</option>
+                  <option value="Black High Tensile Bolt">Black High Tensile Bolt</option>
+                  <option value="Hose Clamp">Hose Clamp</option>
+                  <option value="Wire Hose Clamp">Wire Hose Clamp</option>
+                  <option value="Other">Other</option>
+                </select>
+                <input type="text" class="form-control q-size" placeholder="e.g. M10" required>
+                <input type="number" class="form-control q-qty" placeholder="50" required min="1">
+                <button type="button" class="quotation-btn-remove" onclick="this.parentElement.remove()">✕</button>
+              </div>
+            </div>
+            <button type="button" class="quotation-btn-add" onclick="addQuotationItem()">+ Add Another Item</button>
+          </div>
+
+          <div class="quotation-group">
+            <label>Notes / Special Requirements</label>
+            <textarea id="quoteNotes" class="form-control" rows="3" placeholder="Delivery address, grade, urgency, quantity..."></textarea>
+          </div>
+
+          <button type="submit" class="quotation-btn-submit" style="margin-top: 16px;">Submit Quotation Request</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="logo.png" alt="Nut and Bolt" style="height: 60px; width: auto; object-fit: contain;">
+          </div>
+          <p class="footer-desc">Sri Lanka's trusted wholesale supplier of industrial fasteners — Hose Clamps, Wire Hose Clamps, Hex Bolts, Zinc Plated Bolts & Black High Tensile Bolts. Bulk orders only. Island-wide delivery.</p>
+          <p>© 2026 nutandbolt.com.lk. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Clamps</h4>
+          <ul>
+            <li><a href="#" onclick="setPartCategory('accessories', document.querySelector('.cat-item')); return false;">Hose Clamps</a></li>
+            <li><a href="#" onclick="setPartCategory('suspension', document.querySelector('.cat-item')); return false;">Wire Hose Clamps</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Hex Bolts</h4>
+          <ul>
+            <li><a href="#" onclick="setPartCategory('engine', document.querySelector('.cat-item')); return false;">Hex Head Bolts</a></li>
+            <li><a href="#" onclick="setPartCategory('engine', document.querySelector('.cat-item')); return false;">Zinc Plated Bolts</a></li>
+            <li><a href="#" onclick="setPartCategory('engine', document.querySelector('.cat-item')); return false;">Black High Tensile Bolts</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:+94702639292">📞 070 263 9292</a></li>
+            <li><a href="https://wa.me/94702639292" target="_blank">💬 WhatsApp Order</a></li>
+            <li><a href="#">📍 76/2/2 Udugampola, Gampaha</a></li>
+            <li><a href="#">🕘 Mon–Sat: 8am – 6pm</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Wholesale only — Bolts: Minimum 1 kg per size | Clamps: Minimum 100 pcs per size. Retail orders not accepted.</p>
+        <p>🔩 Industrial Fasteners Supplier | Sri Lanka</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== DATASET =====
+    // Photo Tags (using actual product images copied from uploads)
+    const HOSE_CLIP_SVG = `<img src="hose_clamp.png" alt="Hose Clamp" style="width: 100%; height: 100%; object-fit: contain; max-height: 120px; border-radius: 8px;">`;
+    const WIRE_HOSE_CLAMP_SVG = `<img src="wire_hose_clamp.png" alt="Double Wire Hose Clamp" style="width: 100%; height: 100%; object-fit: contain; max-height: 120px; border-radius: 8px;">`;
+
+    const DEFAULT_PRODUCTS = [
+      // ----- HOSE CLAMPS -----
+      {
+        id: 1,
+        title: "Hose Clamp 1/2\"",
+        category: "accessories",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hose Clamp",
+        price: 18.00, // Doubled from 9.00
+        compat: "Universal Size 1/2 inch",
+        icon: HOSE_CLIP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HC-050",
+        qty: 64000
+      },
+      {
+        id: 2,
+        title: "Hose Clamp 5/8\"",
+        category: "accessories",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hose Clamp",
+        price: 19.80, // Doubled from 9.90
+        compat: "Universal Size 5/8 inch",
+        icon: HOSE_CLIP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HC-062",
+        qty: 70000
+      },
+      {
+        id: 3,
+        title: "Hose Clamp 3/4\"",
+        category: "accessories",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hose Clamp",
+        price: 21.60, // Doubled from 10.80
+        compat: "Universal Size 3/4 inch",
+        icon: HOSE_CLIP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HC-075",
+        qty: 100000
+      },
+      {
+        id: 4,
+        title: "Hose Clamp 1\"",
+        category: "accessories",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hose Clamp",
+        price: 23.40, // Doubled from 11.70
+        compat: "Universal Size 1 inch",
+        icon: HOSE_CLIP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HC-100",
+        qty: 37000
+      },
+      {
+        id: 5,
+        title: "Hose Clamp 1 1/2\"",
+        category: "accessories",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hose Clamp",
+        price: 27.00, // Doubled from 13.50
+        compat: "Universal Size 1.5 inch",
+        icon: HOSE_CLIP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HC-150",
+        qty: 24000
+      },
+      {
+        id: 6,
+        title: "Hose Clamp 2\"",
+        category: "accessories",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hose Clamp",
+        price: 37.80, // Doubled from 18.90
+        compat: "Universal Size 2 inch",
+        icon: HOSE_CLIP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HC-200",
+        qty: 20000
+      },
+      // ----- WIRE HOSE CLAMPS -----
+      {
+        id: 7,
+        title: "Wire Hose Clamp 2\"",
+        category: "suspension",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Wire Hose Clamp",
+        price: 45.90, // Doubled from 22.95
+        compat: "Size 2 inch",
+        icon: WIRE_HOSE_CLAMP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "WHC-200",
+        qty: 46
+      },
+      {
+        id: 8,
+        title: "Wire Hose Clamp 2.5\"",
+        category: "suspension",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Wire Hose Clamp",
+        price: 48.60, // Doubled from 24.30
+        compat: "Size 2.5 inch",
+        icon: WIRE_HOSE_CLAMP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "WHC-250",
+        qty: 330
+      },
+      {
+        id: 9,
+        title: "Wire Hose Clamp 3\"",
+        category: "suspension",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Wire Hose Clamp",
+        price: 53.00, // Doubled from 26.50
+        compat: "Size 3 inch",
+        icon: WIRE_HOSE_CLAMP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "WHC-300",
+        qty: 224
+      },
+      {
+        id: 10,
+        title: "Wire Hose Clamp 3 1/2\"",
+        category: "suspension",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Wire Hose Clamp",
+        price: 41.40, // Doubled from 20.70
+        compat: "Size 3.5 inch",
+        icon: WIRE_HOSE_CLAMP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "WHC-350",
+        qty: 490
+      },
+      {
+        id: 11,
+        title: "Wire Hose Clamp 4\"",
+        category: "suspension",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Wire Hose Clamp",
+        price: 84.60, // Doubled from 42.30
+        compat: "Size 4 inch",
+        icon: WIRE_HOSE_CLAMP_SVG,
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "WHC-400",
+        qty: 195
+      },
+      // ----- HEX HEAD BOLTS -----
+      {
+        id: 12,
+        title: "Hex Head Bolt M6",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hex Head Bolt",
+        price: 700.00,
+        unit: "1 kg",
+        compat: "Standard Metric M6",
+        image: "hex_head_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HHB-M6",
+        qty: 1000
+      },
+      {
+        id: 13,
+        title: "Hex Head Bolt M8",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hex Head Bolt",
+        price: 800.00,
+        unit: "1 kg",
+        compat: "Standard Metric M8",
+        image: "hex_head_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HHB-M8",
+        qty: 1000
+      },
+      {
+        id: 14,
+        title: "Hex Head Bolt M10",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hex Head Bolt",
+        price: 900.00,
+        unit: "1 kg",
+        compat: "Standard Metric M10",
+        image: "hex_head_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HHB-M10",
+        qty: 1000
+      },
+      {
+        id: 15,
+        title: "Hex Head Bolt M12",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hex Head Bolt",
+        price: 1100.00,
+        unit: "1 kg",
+        compat: "Standard Metric M12",
+        image: "hex_head_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HHB-M12",
+        qty: 1000
+      },
+      {
+        id: 16,
+        title: "Hex Head Bolt M14",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Hex Head Bolt",
+        price: 1400.00,
+        unit: "1 kg",
+        compat: "Standard Metric M14",
+        image: "hex_head_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "HHB-M14",
+        qty: 1000
+      },
+      // ----- ZINC PLATED HEX BOLTS -----
+      {
+        id: 17,
+        title: "Zinc Plated Hex Bolt M6",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Zinc Plated Hex Bolt",
+        price: 800.00,
+        unit: "1 kg",
+        compat: "Zinc Plated Metric M6",
+        image: "zinc_plated_hex_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "ZPB-M6",
+        qty: 1000
+      },
+      {
+        id: 18,
+        title: "Zinc Plated Hex Bolt M8",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Zinc Plated Hex Bolt",
+        price: 900.00,
+        unit: "1 kg",
+        compat: "Zinc Plated Metric M8",
+        image: "zinc_plated_hex_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "ZPB-M8",
+        qty: 1000
+      },
+      {
+        id: 19,
+        title: "Zinc Plated Hex Bolt M10",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Zinc Plated Hex Bolt",
+        price: 1000.00,
+        unit: "1 kg",
+        compat: "Zinc Plated Metric M10",
+        image: "zinc_plated_hex_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "ZPB-M10",
+        qty: 1000
+      },
+      {
+        id: 20,
+        title: "Zinc Plated Hex Bolt M12",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Zinc Plated Hex Bolt",
+        price: 1300.00,
+        unit: "1 kg",
+        compat: "Zinc Plated Metric M12",
+        image: "zinc_plated_hex_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "ZPB-M12",
+        qty: 1000
+      },
+      // ----- BLACK HIGH TENSILE HEX BOLTS -----
+      {
+        id: 21,
+        title: "Black High Tensile Hex Bolt M6",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Black High Tensile Hex Bolt",
+        price: 1100.00,
+        unit: "1 kg",
+        compat: "Black High Tensile Metric M6",
+        image: "black_high_tensile_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "BHT-M6",
+        qty: 1000
+      },
+      {
+        id: 22,
+        title: "Black High Tensile Hex Bolt M8",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Black High Tensile Hex Bolt",
+        price: 1300.00,
+        unit: "1 kg",
+        compat: "Black High Tensile Metric M8",
+        image: "black_high_tensile_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "BHT-M8",
+        qty: 1000
+      },
+      {
+        id: 23,
+        title: "Black High Tensile Hex Bolt M10",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Black High Tensile Hex Bolt",
+        price: 1500.00,
+        unit: "1 kg",
+        compat: "Black High Tensile Metric M10",
+        image: "black_high_tensile_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "BHT-M10",
+        qty: 1000
+      },
+      {
+        id: 24,
+        title: "Black High Tensile Hex Bolt M12",
+        category: "engine",
+        vehicle: "all",
+        condition: "Brand New",
+        brand: "Black High Tensile Hex Bolt",
+        price: 1800.00,
+        unit: "1 kg",
+        compat: "Black High Tensile Metric M12",
+        image: "black_high_tensile_bolt.png",
+        seller: "Nut and Bolt Store",
+        phone: "+94702639292",
+        location: "76/2/2 Udugampola, Gampaha",
+        partNo: "BHT-M12",
+        qty: 1000
+      }
+    ];
+
+    // Force override local storage to refresh the illustrations and prices immediately
+    let products = DEFAULT_PRODUCTS;
+    localStorage.setItem('eparts_listings', JSON.stringify(products));
+
+    // ===== APP STATE =====
+    let activeVehicleType = "all";
+    let activePartCategory = "all";
+    let currentTheme = "light";
+    let isAdmin = sessionStorage.getItem('eparts_is_admin') === 'true';
+
+    // ===== ADMIN LOCK SYSTEM =====
+    const ADMIN_PASSWORD = "123"; // You can change this password to whatever you want!
+
+    function promptAdminLogin() {
+      if (isAdmin) {
+        // Logout if already logged in
+        isAdmin = false;
+        sessionStorage.removeItem('eparts_is_admin');
+        document.getElementById('adminLoginBtn').innerHTML = "🔑 Admin Login";
+        document.getElementById('adminLoginBtn').style.backgroundColor = "transparent";
+        alert("Logged out from Admin Mode successfully!");
+        filterProducts(); // Refresh layout updates
+        return;
+      }
+      document.getElementById('adminPasswordInput').value = "";
+      document.getElementById('adminAuthError').style.display = "none";
+      document.getElementById('adminModal').classList.add('active');
+      document.getElementById('adminPasswordInput').focus();
+    }
+
+    function closeAdminModal() {
+      document.getElementById('adminModal').classList.remove('active');
+    }
+
+    function verifyAdminPassword(e) {
+      e.preventDefault();
+      const enteredPass = document.getElementById('adminPasswordInput').value;
+      if (enteredPass === ADMIN_PASSWORD) {
+        isAdmin = true;
+        sessionStorage.setItem('eparts_is_admin', 'true');
+        document.getElementById('adminLoginBtn').innerHTML = "🔓 Admin Mode (On)";
+        document.getElementById('adminLoginBtn').style.backgroundColor = "#16a34a"; // Green background
+        closeAdminModal();
+        alert("Successfully authenticated as Admin!");
+        filterProducts();
+      } else {
+        document.getElementById('adminAuthError').style.display = "block";
+      }
+    }
+
+    // Initialize UI status for Admin on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      if (isAdmin) {
+        document.getElementById('adminLoginBtn').innerHTML = "🔓 Admin Mode (On)";
+        document.getElementById('adminLoginBtn').style.backgroundColor = "#16a34a";
+      }
+    });
+
+    // ===== THEME MANAGEMENT =====
+    function toggleTheme() {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const btn = document.getElementById('themeBtn');
+      if (theme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        btn.innerHTML = '🌙 Dark Mode';
+        currentTheme = "light";
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        btn.innerHTML = '☀️ Light Mode';
+        currentTheme = "dark";
+      }
+    }
+
+    // ===== MODAL CONTROLS =====
+    function openDetailModal(productId) {
+      const prod = products.find(p => p.id === productId);
+      if (!prod) return;
+
+      currentEditingProductId = productId;
+
+      document.getElementById('modalImg').innerHTML = prod.image
+        ? `<img src="${prod.image}" alt="${prod.title}" style="width:100%;height:100%;object-fit:contain;padding:12px;">`
+        : (prod.icon || '📦');
+      document.getElementById('modalTitle').textContent = prod.title;
+      document.getElementById('modalPrice').textContent = `LKR ${prod.price.toLocaleString()}`;
+      
+      const badge = document.getElementById('modalBadge');
+      badge.textContent = prod.condition;
+      badge.className = `modal-badge badge-${prod.condition.toLowerCase().replace(" ", "-")}`;
+
+      document.getElementById('modalCategory').textContent = prod.category.toUpperCase();
+      document.getElementById('modalCompat').textContent = prod.compat;
+      document.getElementById('modalPartNo').textContent = prod.partNo || "N/A";
+      document.getElementById('modalBrand').textContent = prod.brand;
+      document.getElementById('modalQty').textContent = prod.qty !== undefined ? `${prod.qty} units` : "In Stock";
+      
+      document.getElementById('modalSeller').textContent = prod.seller;
+      document.getElementById('modalLocation').textContent = `📍 ${prod.location}`;
+      
+      // WhatsApp order link
+      const waMsg = encodeURIComponent(`Hi ${prod.seller}, I saw your listing on eParts.lk for the "${prod.title}" (Price: LKR ${prod.price.toLocaleString()}). Is it still available?`);
+      document.getElementById('modalWaBtn').onclick = () => {
+        window.open(`https://wa.me/${prod.phone.replace("+", "")}?text=${waMsg}`, '_blank');
+      };
+
+      document.getElementById('modalCallBtn').onclick = () => {
+        window.location.href = `tel:${prod.phone}`;
+      };
+
+      // Control Admin controls (Edit & Delete) visibility based on state
+      const editBtn = document.getElementById('modalEditBtn');
+      const deleteBtn = document.getElementById('modalDeleteBtn');
+      if (isAdmin) {
+        editBtn.style.display = "flex";
+        deleteBtn.style.display = "flex";
+      } else {
+        editBtn.style.display = "none";
+        deleteBtn.style.display = "none";
+      }
+
+      document.getElementById('modalDeleteBtn').onclick = () => {
+        if (!isAdmin) {
+          alert("Unauthorized! Only admin can perform this operation.");
+          return;
+        }
+        deleteProduct(prod.id);
+      };
+
+      document.getElementById('modalEditBtn').onclick = () => {
+        if (!isAdmin) {
+          alert("Unauthorized! Only admin can perform this operation.");
+          return;
+        }
+        toggleEditMode(true, prod.price, prod.qty || 1);
+      };
+
+      // Hide edit form by default on open
+      toggleEditMode(false);
+
+      document.getElementById('detailModal').classList.add('active');
+    }
+
+    function toggleEditMode(show, price = 0, qty = 1) {
+      const form = document.getElementById('modalEditForm');
+      if (show) {
+        document.getElementById('editPrice').value = price;
+        document.getElementById('editQty').value = qty;
+        form.style.display = 'block';
+      } else {
+        form.style.display = 'none';
+      }
+    }
+
+    function saveEditProduct() {
+      const priceVal = parseFloat(document.getElementById('editPrice').value);
+      const qtyVal = parseInt(document.getElementById('editQty').value);
+
+      if (isNaN(priceVal) || priceVal <= 0 || isNaN(qtyVal) || qtyVal < 0) {
+        alert("Please enter valid price and quantity values.");
+        return;
+      }
+
+      const prodIndex = products.findIndex(p => p.id === currentEditingProductId);
+      if (prodIndex !== -1) {
+        products[prodIndex].price = priceVal;
+        products[prodIndex].qty = qtyVal;
+        localStorage.setItem('eparts_listings', JSON.stringify(products));
+        
+        // Refresh details modal view
+        openDetailModal(currentEditingProductId);
+        filterProducts();
+        
+        // Hide edit mode
+        toggleEditMode(false);
+      }
+    }
+
+    function deleteProduct(productId) {
+      if (confirm("Are you sure you want to delete this listing?")) {
+        products = products.filter(p => p.id !== productId);
+        localStorage.setItem('eparts_listings', JSON.stringify(products));
+        closeDetailModal();
+        filterProducts();
+      }
+    }
+
+    function closeDetailModal() {
+      document.getElementById('detailModal').classList.remove('active');
+    }
+
+    function openPostAdModal() {
+      if (!isAdmin) {
+        alert("Management operations are locked. Please log in as an Admin to post new spare parts.");
+        promptAdminLogin();
+        return;
+      }
+      document.getElementById('postAdModal').classList.add('active');
+    }
+
+    function closePostAdModal() {
+      document.getElementById('postAdModal').classList.remove('active');
+    }
+
+    // ===== SEARCH & FILTERS =====
+    function setVehicleType(type, element) {
+      activeVehicleType = type;
+      if (element) {
+        document.querySelectorAll('.vehicle-card').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+      }
+      filterProducts();
+    }
+
+    function setPartCategory(cat, element) {
+      activePartCategory = cat;
+      if (element) {
+        document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+      }
+      filterProducts();
+    }
+
+    function filterProducts() {
+      const searchVal = document.getElementById('searchBar').value.toLowerCase();
+
+      // Bolt type filters
+      const showHex   = document.getElementById('brand-hex')   ? document.getElementById('brand-hex').checked   : true;
+      const showZinc  = document.getElementById('brand-zinc')  ? document.getElementById('brand-zinc').checked  : true;
+      const showBlack = document.getElementById('brand-black') ? document.getElementById('brand-black').checked : true;
+
+      // Price limits
+      const priceMin = parseFloat(document.getElementById('price-min').value) || 0;
+      const priceMax = parseFloat(document.getElementById('price-max').value) || Infinity;
+
+      // Sort
+      const sortBy = document.getElementById('sortSelect').value;
+
+      let filtered = products.filter(p => {
+        // Part category filter
+        if (activePartCategory !== 'all' && p.category !== activePartCategory) return false;
+
+        // Search bar
+        const matchesSearch = p.title.toLowerCase().includes(searchVal) ||
+                              p.brand.toLowerCase().includes(searchVal) ||
+                              p.compat.toLowerCase().includes(searchVal);
+        if (!matchesSearch) return false;
+
+        // Bolt type filter (only applies to engine category bolts)
+        if (p.category === 'engine') {
+          const brand = p.brand.toLowerCase();
+          if (brand.includes('hex head bolt') && !showHex)   return false;
+          if (brand.includes('zinc plated')   && !showZinc)  return false;
+          if (brand.includes('black high')    && !showBlack) return false;
+        }
+
+        // Price filter
+        if (p.price < priceMin || p.price > priceMax) return false;
+
+        return true;
+      });
+
+      // Sorting logic
+      if (sortBy === 'price-low') {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortBy === 'price-high') {
+        filtered.sort((a, b) => b.price - a.price);
+      } else {
+        filtered.sort((a, b) => a.id - b.id); // by insertion order
+      }
+
+      renderGrid(filtered);
+      updateCounts();
+    }
+
+    function updateCounts() {
+      // Update sidebar category counters
+      const categories = ['all', 'accessories', 'suspension', 'engine'];
+      categories.forEach(cat => {
+        const count = products.filter(p => cat === 'all' || p.category === cat).length;
+        const el = document.getElementById(`count-${cat}`);
+        if (el) el.textContent = count;
+      });
+    }
+
+    function renderGrid(dataList) {
+      const grid = document.getElementById('productGrid');
+      document.getElementById('currentCount').textContent = dataList.length;
+
+      if (dataList.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 48px; color: var(--text-muted);">
+            <div style="font-size: 48px; margin-bottom: 12px;">🔍</div>
+            <h3>No results found</h3>
+            <p style="font-size: 14px; margin-top: 8px;">Try clearing filters or adjusting your search query.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = dataList.map(p => `
+        <div class="product-card" onclick="openDetailModal(${p.id})">
+          <span class="card-badge badge-brand-new" style="background: #2563eb;">Wholesale Only</span>
+          <div class="card-img-wrap">${p.image ? `<img src="${p.image}" alt="${p.title}" style="width:100%;height:100%;object-fit:contain;padding:8px;">` : (p.icon || '📦')}</div>
+          <div class="card-body">
+            <span class="card-meta" style="color: var(--accent); font-weight: 700;">MOQ: ${p.unit ? p.unit.toUpperCase() + ' MINIMUM' : '100 PCS MINIMUM'}</span>
+            <h3 class="card-title">${p.title}</h3>
+            <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
+              <span class="card-compat" style="margin-bottom: 0;">${p.compat}</span>
+              <span style="font-size: 11px; font-weight: 700; color: var(--success); background: var(--bg-app); padding: 4px 8px; border-radius: var(--radius-sm); white-space: nowrap;">
+                Available Stock: ${(p.qty !== undefined ? p.qty : 1).toLocaleString()} pcs
+              </span>
+            </div>
+            <div class="card-price-row">
+              <span class="card-price" style="font-size: 15px;">LKR ${p.price.toFixed(2)} <span style="font-size: 10px; color: var(--text-muted); font-weight: normal;">/ ${p.unit || 'pc'}</span></span>
+              <button class="btn-view">Inquire</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ===== POST NEW AD HANDLER =====
+    function handlePostAd(e) {
+      e.preventDefault();
+
+      const newAd = {
+        id: Date.now(),
+        title: document.getElementById('formTitle').value,
+        category: document.getElementById('formCategory').value,
+        vehicle: document.getElementById('formVehicle').value,
+        condition: document.getElementById('formCondition').value,
+        brand: document.getElementById('formBrand').value,
+        price: parseFloat(document.getElementById('formPrice').value),
+        qty: parseInt(document.getElementById('formQty').value) || 1,
+        compat: document.getElementById('formCompat').value,
+        icon: document.getElementById('formIcon').value || "📦",
+        seller: document.getElementById('formSeller').value,
+        phone: document.getElementById('formPhone').value,
+        location: document.getElementById('formLocation').value,
+        partNo: "N/A"
+      };
+
+      products.unshift(newAd); // Add to beginning
+      localStorage.setItem('eparts_listings', JSON.stringify(products));
+      
+      closePostAdModal();
+      filterProducts();
+      e.target.reset();
+
+      // Show toast
+      const toast = document.getElementById('toastNotification');
+      toast.classList.add('active');
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 3500);
+    }
+
+    // Close modals on clicking overlay background
+    window.onclick = function(event) {
+      const detailModal = document.getElementById('detailModal');
+      const postAdModal = document.getElementById('postAdModal');
+      if (event.target === detailModal) {
+        closeDetailModal();
+      }
+      if (event.target === postAdModal) {
+        closePostAdModal();
+      }
+    }
+
+    // ===== INITIALIZE =====
+    filterProducts();
+    // ===== QUOTATION FORM LOGIC =====
+    function addQuotationItem() {
+      const container = document.getElementById('quotationItemsContainer');
+      const row = document.createElement('div');
+      row.className = 'quotation-item-row';
+      row.innerHTML = `
+        <select class="form-control q-product" required>
+          <option value="" disabled selected>Select Product...</option>
+          <option value="Hex Head Bolt">Hex Head Bolt</option>
+          <option value="Zinc Plated Hex Bolt">Zinc Plated Hex Bolt</option>
+          <option value="Black High Tensile Bolt">Black High Tensile Bolt</option>
+          <option value="Hose Clamp">Hose Clamp</option>
+          <option value="Wire Hose Clamp">Wire Hose Clamp</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" class="form-control q-size" placeholder="e.g. M10" required>
+        <input type="number" class="form-control q-qty" placeholder="50" required min="1">
+        <button type="button" class="quotation-btn-remove" onclick="this.parentElement.remove()">✕</button>
+      `;
+      container.appendChild(row);
+    }
+
+    function submitQuotation(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('quoteName').value;
+      const phone = document.getElementById('quotePhone').value;
+      const company = document.getElementById('quoteCompany').value || 'N/A';
+      const email = document.getElementById('quoteEmail').value || 'N/A';
+      const notes = document.getElementById('quoteNotes').value || 'None';
+      
+      let itemsText = '';
+      const itemRows = document.querySelectorAll('.quotation-item-row');
+      itemRows.forEach((row, index) => {
+        const prod = row.querySelector('.q-product').value;
+        const size = row.querySelector('.q-size').value;
+        const qty = row.querySelector('.q-qty').value;
+        itemsText += `\n${index + 1}. ${prod} | Size: ${size} | Qty: ${qty}`;
+      });
+
+      let message = `*NEW QUOTATION REQUEST*\n`;
+      message += `------------------------\n`;
+      message += `*Name:* ${name}\n`;
+      message += `*Phone:* ${phone}\n`;
+      message += `*Company:* ${company}\n`;
+      message += `*Email:* ${email}\n\n`;
+      message += `*ITEMS REQUIRED:*\n${itemsText}\n\n`;
+      message += `*Notes:* ${notes}`;
+
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/94702639292?text=${encodedMessage}`, '_blank');
+      
+      showToast("Quotation request prepared! Opening WhatsApp...");
+      document.getElementById('quotationForm').reset();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MT Hardware — Nuts, Bolts & Industrial Fasteners Sri Lanka</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#F2F3F5;color:#1a1a2e;font-size:14px}
+
+/* ===== TOP BAR ===== */
+.topbar{background:#1a1a2e;color:#9CA3AF;font-size:12px;padding:6px 0}
+.topbar-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:#9CA3AF;text-decoration:none;margin-left:16px}
+.topbar a:hover{color:#fff}
+.topbar-left{display:flex;gap:16px;align-items:center}
+.topbar-left span{display:flex;align-items:center;gap:4px}
+
+/* ===== HEADER ===== */
+header{background:#fff;border-bottom:1px solid #E5E7EB;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.header-inner{max-width:1280px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-mark{width:40px;height:40px;background:#1a1a2e;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-mark svg{width:22px;height:22px;fill:#F97316}
+.logo-text{line-height:1.2}
+.logo-name{font-size:1.1rem;font-weight:700;color:#1a1a2e;letter-spacing:-.02em}
+.logo-tag{font-size:10px;color:#6B7280;font-weight:500;letter-spacing:.04em}
+
+.search-wrap{flex:1;position:relative;max-width:600px}
+.search-wrap input{width:100%;padding:11px 16px 11px 44px;border:2px solid #E5E7EB;border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;transition:border .15s;background:#F9FAFB;color:#1a1a2e}
+.search-wrap input:focus{outline:none;border-color:#2563EB;background:#fff}
+.search-wrap svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:#9CA3AF}
+.search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#2563EB;color:#fff;border:none;padding:6px 14px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer}
+
+.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.btn-wa{background:#25D366;color:#fff;padding:9px 16px;border-radius:9px;border:none;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;text-decoration:none;white-space:nowrap}
+.btn-wa:hover{background:#16a34a}
+.btn-quote-head{background:#2563EB;color:#fff;padding:9px 16px;border-radius:9px;border:none;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.btn-quote-head:hover{background:#1d4ed8}
+
+/* ===== NAV BAR ===== */
+.navbar{background:#1a1a2e;overflow-x:auto}
+.navbar-inner{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;gap:0;white-space:nowrap}
+.nav-item{color:#D1D5DB;padding:12px 16px;font-size:13px;font-weight:500;cursor:pointer;border-bottom:3px solid transparent;transition:all .15s;display:flex;align-items:center;gap:6px;text-decoration:none;white-space:nowrap}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,.05)}
+.nav-item.active{color:#F97316;border-bottom-color:#F97316}
+.nav-item svg{width:15px;height:15px;opacity:.7}
+
+/* ===== HERO BANNER ===== */
+.hero{background:linear-gradient(120deg,#1a1a2e 0%,#1e3a5f 60%,#1a3a4a 100%);padding:36px 20px;color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-80px;top:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(249,115,22,.15) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:center}
+.hero-eyebrow{background:rgba(249,115,22,.2);color:#FB923C;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;display:inline-block;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;border:1px solid rgba(249,115,22,.3)}
+.hero h1{font-size:2.2rem;font-weight:700;line-height:1.15;margin-bottom:12px;letter-spacing:-.02em}
+.hero h1 span{color:#F97316}
+.hero-sub{color:#9CA3AF;font-size:.9rem;line-height:1.6;margin-bottom:22px;max-width:460px}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.hero-cta-pri{background:#F97316;color:#fff;padding:11px 22px;border-radius:9px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s}
+.hero-cta-pri:hover{background:#ea6800}
+.hero-cta-sec{background:rgba(255,255,255,.1);color:#fff;padding:11px 22px;border-radius:9px;border:1px solid rgba(255,255,255,.2);font-size:14px;font-weight:500;cursor:pointer;transition:all .15s}
+.hero-cta-sec:hover{background:rgba(255,255,255,.15)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.1);border-radius:12px;overflow:hidden;margin-top:24px;border:1px solid rgba(255,255,255,.1)}
+.hero-stat{background:rgba(255,255,255,.05);padding:16px;text-align:center}
+.hero-stat-num{font-size:1.6rem;font-weight:700;color:#F97316;line-height:1}
+.hero-stat-lbl{font-size:11px;color:#9CA3AF;margin-top:3px}
+/* right panel */
+.hero-panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px;backdrop-filter:blur(4px)}
+.hero-panel h3{font-size:.95rem;font-weight:600;margin-bottom:14px;color:#E5E7EB}
+.quick-cats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quick-cat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:12px 10px;text-align:center;cursor:pointer;transition:all .15s}
+.quick-cat:hover{background:rgba(249,115,22,.15);border-color:rgba(249,115,22,.4)}
+.quick-cat-icon{font-size:1.6rem;margin-bottom:5px}
+.quick-cat-name{font-size:11px;font-weight:600;color:#D1D5DB}
+
+/* ===== LAYOUT ===== */
+.page{max-width:1280px;margin:0 auto;padding:24px 20px;display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:start}
+
+/* ===== SIDEBAR ===== */
+.sidebar{background:#fff;border-radius:12px;border:1px solid #E5E7EB;overflow:hidden;position:sticky;top:73px}
+.sidebar-head{background:#1a1a2e;padding:14px 16px;color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.sidebar-head svg{width:16px;height:16px;color:#F97316}
+.sidebar-cat{padding:3px 0}
+.sidebar-item{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;transition:background .12s;border-left:3px solid transparent;color:#374151;font-size:13px;font-weight:500}
+.sidebar-item:hover{background:#F9FAFB;color:#2563EB}
+.sidebar-item.active{background:#EFF6FF;color:#2563EB;border-left-color:#2563EB;font-weight:600}
+.sidebar-item-icon{font-size:1.1rem;width:22px;text-align:center}
+.sidebar-item-count{margin-left:auto;background:#F3F4F6;color:#6B7280;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px}
+.sidebar-item.active .sidebar-item-count{background:#DBEAFE;color:#2563EB}
+.sidebar-divider{height:1px;background:#F3F4F6;margin:4px 0}
+.sidebar-section-label{padding:10px 16px 4px;font-size:10px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:.08em}
+
+/* filter box */
+.filter-box{border-top:1px solid #E5E7EB;padding:14px 16px}
+.filter-box h4{font-size:12px;font-weight:600;color:#374151;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em}
+.filter-check{display:flex;align-items:center;gap:8px;padding:4px 0;cursor:pointer;color:#6B7280;font-size:12px}
+.filter-check input{accent-color:#2563EB;width:14px;height:14px}
+.filter-check:hover{color:#374151}
+
+/* ===== MAIN CONTENT ===== */
+.main-content{}
+.results-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.results-info{font-size:13px;color:#6B7280}
+.results-info strong{color:#1a1a2e}
+.sort-row{display:flex;align-items:center;gap:8px}
+.sort-label{font-size:12px;color:#6B7280}
+.sort-select{padding:6px 10px;border:1px solid #E5E7EB;border-radius:7px;font-size:12px;font-family:'Inter',sans-serif;color:#374151;background:#fff;cursor:pointer}
+
+/* SIZE FILTER PILLS */
+.size-filter-wrap{background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:14px 16px;margin-bottom:14px}
+.size-filter-label{font-size:11px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px}
+.size-pills{display:flex;gap:6px;flex-wrap:wrap}
+.size-pill{padding:5px 12px;border:1.5px solid #E5E7EB;border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;transition:all .12s;color:#374151;background:#fff}
+.size-pill:hover{border-color:#93C5FD;color:#2563EB}
+.size-pill.active{background:#2563EB;border-color:#2563EB;color:#fff;font-weight:600}
+
+/* PRODUCT GRID */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+
+.prod-card{background:#fff;border:1px solid #E5E7EB;border-radius:12px;overflow:hidden;cursor:pointer;transition:all .18s;display:flex;flex-direction:column}
+.prod-card:hover{border-color:#93C5FD;box-shadow:0 4px 20px rgba(37,99,235,.1);transform:translateY(-2px)}
+.prod-card-img{height:120px;display:flex;align-items:center;justify-content:center;background:#F8F9FA;font-size:3rem;position:relative;border-bottom:1px solid #F3F4F6}
+.prod-card-badge{position:absolute;top:8px;left:8px;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em}
+.badge-hot{background:#FEF3C7;color:#92400E}
+.badge-new{background:#DCFCE7;color:#14532D}
+.badge-sale{background:#FEE2E2;color:#991B1B}
+.prod-body{padding:12px;flex:1;display:flex;flex-direction:column}
+.prod-cat-tag{font-size:10px;color:#9CA3AF;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.prod-name{font-size:.875rem;font-weight:600;color:#1a1a2e;margin-bottom:3px;line-height:1.3}
+.prod-sub-text{font-size:11px;color:#9CA3AF;margin-bottom:10px;flex:1}
+.prod-size-row{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px}
+.prod-size-tag{font-size:10px;padding:2px 6px;background:#EFF6FF;color:#1d4ed8;border-radius:4px;font-weight:600}
+.prod-size-more{font-size:10px;color:#9CA3AF;padding:2px 4px}
+.prod-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #F3F4F6;padding-top:10px;margin-top:auto}
+.prod-price{font-size:1rem;font-weight:700;color:#1a1a2e}
+.prod-price span{font-size:10px;color:#9CA3AF;font-weight:400}
+.prod-btn{background:#2563EB;color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;transition:background .12s;white-space:nowrap}
+.prod-btn:hover{background:#1d4ed8}
+
+/* SIZE DETAIL MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.hidden{display:none}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modal-head{padding:20px 22px 16px;border-bottom:1px solid #E5E7EB;display:flex;align-items:flex-start;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:1}
+.modal-head-left{display:flex;align-items:center;gap:14px}
+.modal-icon{width:50px;height:50px;background:#EFF6FF;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0}
+.modal-title{font-size:1rem;font-weight:700;color:#1a1a2e}
+.modal-subtitle{font-size:12px;color:#9CA3AF;margin-top:2px}
+.modal-close{background:#F3F4F6;border:none;width:32px;height:32px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:#6B7280;flex-shrink:0}
+.modal-close:hover{background:#E5E7EB}
+.modal-body{padding:20px 22px}
+.modal-section-label{font-size:11px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #F3F4F6}
+.size-table{width:100%;border-collapse:collapse;margin-bottom:20px}
+.size-table th{text-align:left;font-size:11px;font-weight:700;color:#9CA3AF;text-transform:uppercase;letter-spacing:.06em;padding:8px 10px;background:#F9FAFB;border-bottom:1px solid #E5E7EB}
+.size-table td{padding:10px 10px;border-bottom:1px solid #F9FAFB;font-size:13px;vertical-align:middle}
+.size-table tr:hover td{background:#FAFBFF}
+.size-table .tag-size{background:#EFF6FF;color:#1d4ed8;font-size:11px;font-weight:700;padding:3px 9px;border-radius:5px;display:inline-block}
+.size-table .col-price{font-weight:700;color:#1a1a2e}
+.size-table .col-unit{font-size:11px;color:#9CA3AF}
+.size-table .col-stock{font-size:11px;color:#16a34a;font-weight:500}
+.size-table .col-action{}
+.size-quote-btn{background:#2563EB;color:#fff;border:none;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap}
+.size-quote-btn:hover{background:#1d4ed8}
+.size-wa-btn{background:#25D366;color:#fff;border:none;padding:5px 12px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;margin-left:4px}
+.modal-footer{display:flex;gap:10px;padding:16px 22px;border-top:1px solid #E5E7EB;background:#F9FAFB;border-radius:0 0 16px 16px}
+.modal-footer-btn{flex:1;padding:11px;border-radius:9px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s}
+.mf-wa{background:#25D366;color:#fff}
+.mf-wa:hover{background:#16a34a}
+.mf-quote{background:#2563EB;color:#fff}
+.mf-quote:hover{background:#1d4ed8}
+
+/* QUOTE SECTION */
+.quote-section{background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:28px;margin-top:20px}
+.section-hd{font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:4px}
+.section-sub{font-size:13px;color:#9CA3AF;margin-bottom:22px}
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.q-full{grid-column:span 2}
+.q-group label{display:block;font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.q-group input,.q-group select,.q-group textarea{width:100%;padding:10px 13px;border:1.5px solid #E5E7EB;border-radius:8px;font-size:13px;font-family:'Inter',sans-serif;color:#1a1a2e;transition:border .15s;background:#FAFAFA}
+.q-group input:focus,.q-group select:focus,.q-group textarea:focus{outline:none;border-color:#2563EB;background:#fff}
+.q-group textarea{min-height:80px;resize:vertical}
+.q-items-label{font-size:11px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.06em;margin:16px 0 8px}
+.q-item-row{display:grid;grid-template-columns:2fr 1.2fr 1fr 32px;gap:8px;align-items:end;margin-bottom:8px}
+.btn-add-row{width:100%;padding:9px;background:#EFF6FF;border:1.5px dashed #93C5FD;border-radius:8px;color:#2563EB;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:16px;transition:all .15s}
+.btn-add-row:hover{background:#DBEAFE}
+.btn-rm{background:#FEE2E2;border:none;border-radius:6px;color:#DC2626;width:30px;height:30px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center}
+.q-submit{width:100%;padding:13px;background:#2563EB;color:#fff;border:none;border-radius:9px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.02em;transition:all .15s}
+.q-submit:hover{background:#1d4ed8}
+
+/* TRUST BANNER */
+.trust-banner{background:#fff;border-top:1px solid #E5E7EB;padding:20px;margin-top:30px}
+.trust-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 20px}
+.trust-item{display:flex;align-items:center;gap:12px}
+.trust-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.ti-blue{background:#EFF6FF}
+.ti-green{background:#DCFCE7}
+.ti-orange{background:#FFF7ED}
+.ti-purple{background:#F5F3FF}
+.trust-text h4{font-size:13px;font-weight:600;color:#1a1a2e;margin-bottom:1px}
+.trust-text p{font-size:11px;color:#9CA3AF}
+
+/* FOOTER */
+footer{background:#1a1a2e;color:#9CA3AF;padding:40px 20px 20px;margin-top:40px}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.footer-logo{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px}
+.footer-logo span{color:#F97316}
+.footer-desc{font-size:12px;line-height:1.7;margin-bottom:16px}
+.footer-contact a{display:flex;align-items:center;gap:8px;color:#9CA3AF;text-decoration:none;font-size:12px;margin-bottom:6px}
+.footer-contact a:hover{color:#fff}
+.footer-col h4{font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul a{color:#9CA3AF;text-decoration:none;font-size:12px;transition:color .12s}
+.footer-col ul a:hover{color:#F97316}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-size:11px}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;z-index:150;transition:all .2s;text-decoration:none;font-size:28px}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.5)}
+.wa-float-label{position:absolute;right:64px;background:#25D366;color:#fff;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.wa-float:hover .wa-float-label{opacity:1}
+
+/* TOAST */
+.toast{position:fixed;top:80px;right:20px;z-index:300;background:#16A34A;color:#fff;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;transform:translateX(200%);transition:transform .3s;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.toast.show{transform:translateX(0)}
+
+@media(max-width:900px){
+  .page{grid-template-columns:1fr}
+  .sidebar{position:static;display:none}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-panel{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .trust-inner{grid-template-columns:1fr 1fr}
+  .q-grid{grid-template-columns:1fr}
+  .q-full{grid-column:span 1}
+}
+@media(max-width:600px){
+  .topbar-inner{flex-direction:column;gap:4px;text-align:center}
+  .header-inner{flex-wrap:wrap}
+  .search-wrap{order:3;flex-basis:100%}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>📍 Islandwide Delivery — Sri Lanka</span>
+      <span>⏰ Mon–Sat 8am–6pm</span>
+    </div>
+    <div>
+      <a href="#">Track Order</a>
+      <a href="#">Bulk Orders</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">MT Hardware</div>
+        <div class="logo-tag">Nuts · Bolts · Fasteners</div>
+      </div>
+    </a>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search for nuts, bolts, drill bits, sizes..." oninput="handleSearch(this.value)">
+      <button class="search-btn">Search</button>
+    </div>
+    <div class="header-actions">
+      <a class="btn-wa" href="https://wa.me/94XXXXXXXXX" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order via WhatsApp
+      </a>
+      <button class="btn-quote-head" onclick="document.getElementById('quoteSection').scrollIntoView({behavior:'smooth'})">Get Quote</button>
+    </div>
+  </div>
+</header>
+
+<!-- NAV BAR -->
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="nav-item active" href="#" onclick="setCat('nuts',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      Nuts
+    </a>
+    <a class="nav-item" href="#" onclick="setCat('bolts',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      Bolts
+    </a>
+    <a class="nav-item" href="#" onclick="setCat('screws',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      Screws
+    </a>
+    <a class="nav-item" href="#" onclick="setCat('washers',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+      Washers
+    </a>
+    <a class="nav-item" href="#" onclick="setCat('cable-ties',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Cable Ties
+    </a>
+    <a class="nav-item" href="#" onclick="setCat('drill-bits',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 3 19 3 19 11"/><path d="M19 11 5 21V3"/></svg>
+      Drill Bits
+    </a>
+    <a class="nav-item" href="#" onclick="setCat('grinding',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+      Grinding Discs
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Sri Lanka's #1 Fastener Supplier</div>
+      <h1>Quality Nuts, Bolts &<br><span>Industrial Fasteners</span></h1>
+      <p class="hero-sub">All sizes in stock — from M6 to M36. Premium quality galvanized, stainless & grade 8 hardware. Fast delivery islandwide.</p>
+      <div class="hero-ctas">
+        <button class="hero-cta-pri" onclick="document.querySelector('.page').scrollIntoView({behavior:'smooth'})">Browse All Products</button>
+        <button class="hero-cta-sec" onclick="document.getElementById('quoteSection').scrollIntoView({behavior:'smooth'})">Request Bulk Quote</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">500+</div><div class="hero-stat-lbl">Products</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-lbl">Years</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">24hr</div><div class="hero-stat-lbl">Dispatch</div></div>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <h3>Browse by Category</h3>
+      <div class="quick-cats">
+        <div class="quick-cat" onclick="setCat('nuts', document.querySelector('.nav-item'))">
+          <div class="quick-cat-icon">⚙️</div>
+          <div class="quick-cat-name">Nuts</div>
+        </div>
+        <div class="quick-cat" onclick="setCat('bolts', document.querySelectorAll('.nav-item')[1])">
+          <div class="quick-cat-icon">🔩</div>
+          <div class="quick-cat-name">Bolts</div>
+        </div>
+        <div class="quick-cat" onclick="setCat('drill-bits', document.querySelectorAll('.nav-item')[5])">
+          <div class="quick-cat-icon">🔧</div>
+          <div class="quick-cat-name">Drill Bits</div>
+        </div>
+        <div class="quick-cat" onclick="setCat('grinding', document.querySelectorAll('.nav-item')[6])">
+          <div class="quick-cat-icon">💿</div>
+          <div class="quick-cat-name">Grinding Discs</div>
+        </div>
+        <div class="quick-cat" onclick="setCat('cable-ties', document.querySelectorAll('.nav-item')[4])">
+          <div class="quick-cat-icon">🔗</div>
+          <div class="quick-cat-name">Cable Ties</div>
+        </div>
+        <div class="quick-cat" onclick="setCat('washers', document.querySelectorAll('.nav-item')[3])">
+          <div class="quick-cat-icon">🔘</div>
+          <div class="quick-cat-name">Washers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BANNER -->
+<div class="trust-banner">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon ti-blue">🚚</div>
+      <div class="trust-text"><h4>Islandwide Delivery</h4><p>Dispatched within 24 hours</p></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon ti-green">✅</div>
+      <div class="trust-text"><h4>Quality Guaranteed</h4><p>Grade 8 & galvanized in stock</p></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon ti-orange">📦</div>
+      <div class="trust-text"><h4>Bulk Orders Welcome</h4><p>Special pricing for large qty</p></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon ti-purple">💬</div>
+      <div class="trust-text"><h4>WhatsApp Support</h4><p>Reply within 2 hours</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="page">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      All Categories
+    </div>
+    <div class="sidebar-cat" id="sidebarCat"></div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-label">Filter by Grade</div>
+    <div class="filter-box">
+      <div class="filter-check"><input type="checkbox" checked> Grade 4.6 (Standard)</div>
+      <div class="filter-check"><input type="checkbox" checked> Grade 8.8 (High Tensile)</div>
+      <div class="filter-check"><input type="checkbox"> Stainless Steel A2</div>
+      <div class="filter-check"><input type="checkbox"> Stainless Steel A4</div>
+      <div class="filter-check"><input type="checkbox"> Galvanized (GI)</div>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section-label">Filter by Material</div>
+    <div class="filter-box">
+      <div class="filter-check"><input type="checkbox" checked> Mild Steel</div>
+      <div class="filter-check"><input type="checkbox"> Stainless Steel</div>
+      <div class="filter-check"><input type="checkbox"> Brass</div>
+      <div class="filter-check"><input type="checkbox"> Nylon</div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-content">
+    <div class="results-bar">
+      <div class="results-info">Showing <strong id="resultCount">0</strong> products in <strong id="currentCatName">Nuts</strong></div>
+      <div class="sort-row">
+        <span class="sort-label">Sort by:</span>
+        <select class="sort-select">
+          <option>Default</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Most Popular</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="size-filter-wrap" id="sizeFilterWrap">
+      <div class="size-filter-label">Filter by Size</div>
+      <div class="size-pills" id="sizePills"></div>
+    </div>
+
+    <div class="prod-grid" id="prodGrid"></div>
+
+    <!-- QUOTE SECTION -->
+    <div class="quote-section" id="quoteSection">
+      <div class="section-hd">Request a Free Quotation</div>
+      <div class="section-sub">Fill in your requirements — we'll reply within 2 hours</div>
+      <div class="q-grid">
+        <div class="q-group"><label>Your Name</label><input type="text" id="qName" placeholder="Amal Perera"></div>
+        <div class="q-group"><label>Phone / WhatsApp</label><input type="tel" id="qPhone" placeholder="+94 77 XXX XXXX"></div>
+        <div class="q-group"><label>Company / Project</label><input type="text" placeholder="ABC Construction Ltd"></div>
+        <div class="q-group"><label>Email (optional)</label><input type="email" placeholder="amal@example.com"></div>
+      </div>
+      <div class="q-items-label">Items Required</div>
+      <div id="itemRows"></div>
+      <button class="btn-add-row" onclick="addRow()">+ Add Another Item</button>
+      <div class="q-group q-full" style="margin-bottom:12px"><label>Notes / Special Requirements</label><textarea placeholder="Delivery address, grade, urgency, quantity..."></textarea></div>
+      <button class="q-submit" onclick="submitQuote()">Submit Quotation Request</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">MT <span>Hardware</span></div>
+        <p class="footer-desc">Sri Lanka's trusted supplier for industrial fasteners, drill bits & grinding tools. Quality products, fast delivery, competitive prices.</p>
+        <div class="footer-contact">
+          <a href="tel:+94XXXXXXXXX">📞 +94 7X XXX XXXX</a>
+          <a href="https://wa.me/94XXXXXXXXX">💬 WhatsApp Order</a>
+          <a href="mailto:info@mthardware.lk">✉️ info@mthardware.lk</a>
+          <a href="#">📍 Your Address, Sri Lanka</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Hex Nuts & Lock Nuts</a></li>
+          <li><a href="#">Hex Bolts & U-Bolts</a></li>
+          <li><a href="#">Self-Tapping Screws</a></li>
+          <li><a href="#">Flat & Spring Washers</a></li>
+          <li><a href="#">Cable Ties (UV)</a></li>
+          <li><a href="#">HSS Drill Bits</a></li>
+          <li><a href="#">Grinding & Cutting Discs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Browse All Products</a></li>
+          <li><a href="#">Download Price List</a></li>
+          <li><a href="#quoteSection">Request Quote</a></li>
+          <li><a href="#">Bulk Orders</a></li>
+          <li><a href="#">Track My Order</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">About MT Hardware</a></li>
+          <li><a href="#">Delivery Policy</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MT Hardware. All rights reserved.</p>
+      <p>Designed for Sri Lanka's hardware industry.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/94XXXXXXXXX?text=Hi%20MT%20Hardware!%20I%20would%20like%20to%20order." target="_blank" title="Order on WhatsApp">
+  <div class="wa-float-label">Order on WhatsApp</div>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MODAL -->
+<div class="modal-overlay hidden" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <div class="modal-head-left">
+        <div class="modal-icon" id="modalIcon"></div>
+        <div>
+          <div class="modal-title" id="modalTitle"></div>
+          <div class="modal-subtitle" id="modalSub"></div>
+        </div>
+      </div>
+      <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.add('hidden')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section-label">All Sizes & Prices (Rs. per piece)</div>
+      <table class="size-table" id="modalTable">
+        <thead><tr>
+          <th>Size</th><th>Price (Rs.)</th><th>Unit</th><th>Stock</th><th>Action</th>
+        </tr></thead>
+        <tbody id="modalTbody"></tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn mf-wa" onclick="openWA()">💬 WhatsApp Order</button>
+      <button class="modal-footer-btn mf-quote" onclick="document.getElementById('modalOverlay').classList.add('hidden');document.getElementById('quoteSection').scrollIntoView({behavior:'smooth'})">📋 Request Quote</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">✅ Quote submitted! We'll contact you within 2 hours.</div>
+
+<script>
+const CATS_META = [
+  {id:'nuts',label:'Nuts',icon:'⚙️',count:4},
+  {id:'bolts',label:'Bolts',icon:'🔩',count:4},
+  {id:'screws',label:'Screws',icon:'🪛',count:3},
+  {id:'washers',label:'Washers',icon:'🔘',count:3},
+  {id:'cable-ties',label:'Cable Ties',icon:'🔗',count:3},
+  {id:'drill-bits',label:'Drill Bits',icon:'🔧',count:3},
+  {id:'grinding',label:'Grinding Discs',icon:'💿',count:3},
+];
+
+const ALL_PRODUCTS = [
+  {id:'n1',cat:'nuts',icon:'⚙️',name:'Hex Nut',sub:'Grade 8 galvanized steel',badge:'',sizes:[
+    {s:'M6',p:2},{s:'M8',p:3},{s:'M10',p:5},{s:'M12',p:8},{s:'M16',p:15},{s:'M20',p:25},{s:'M24',p:40},{s:'M30',p:70},{s:'M36',p:110}
+  ]},
+  {id:'n2',cat:'nuts',icon:'⚙️',name:'Lock Nut (Nyloc)',sub:'Vibration resistant nylon insert',badge:'hot',sizes:[
+    {s:'M6',p:4},{s:'M8',p:6},{s:'M10',p:9},{s:'M12',p:14},{s:'M16',p:22},{s:'M20',p:35},{s:'M24',p:55},{s:'M30',p:90}
+  ]},
+  {id:'n3',cat:'nuts',icon:'⚙️',name:'Wing Nut',sub:'Easy hand tightening',badge:'',sizes:[
+    {s:'M5',p:3},{s:'M6',p:5},{s:'M8',p:8},{s:'M10',p:12},{s:'M12',p:18}
+  ]},
+  {id:'n4',cat:'nuts',icon:'⚙️',name:'Coupling Nut',sub:'Threaded rod connector — hexagonal',badge:'',sizes:[
+    {s:'M8',p:12},{s:'M10',p:18},{s:'M12',p:25},{s:'M16',p:40},{s:'M20',p:65},{s:'M24',p:95}
+  ]},
+  {id:'b1',cat:'bolts',icon:'🔩',name:'Hex Bolt (GI)',sub:'Full & half thread galvanized',badge:'',sizes:[
+    {s:'M6×20',p:5},{s:'M6×40',p:7},{s:'M8×30',p:9},{s:'M8×50',p:13},{s:'M10×40',p:15},{s:'M10×75',p:22},{s:'M12×50',p:22},{s:'M12×80',p:30},{s:'M16×60',p:45},{s:'M16×100',p:65},{s:'M20×80',p:85},{s:'M20×120',p:115},{s:'M24×120',p:165},{s:'M30×150',p:260}
+  ]},
+  {id:'b2',cat:'bolts',icon:'🔩',name:'Carriage Bolt',sub:'Smooth domed head, square neck',badge:'',sizes:[
+    {s:'M6×30',p:6},{s:'M8×40',p:11},{s:'M10×50',p:18},{s:'M12×60',p:28},{s:'M16×80',p:55},{s:'M20×100',p:95}
+  ]},
+  {id:'b3',cat:'bolts',icon:'🔩',name:'U-Bolt (GI)',sub:'Pipe & conduit fixing',badge:'hot',sizes:[
+    {s:'½"',p:35},{s:'¾"',p:50},{s:'1"',p:70},{s:'1¼"',p:95},{s:'1½"',p:130},{s:'2"',p:180},{s:'2½"',p:240},{s:'3"',p:320}
+  ]},
+  {id:'b4',cat:'bolts',icon:'🔩',name:'Anchor Bolt (Chemical)',sub:'Concrete anchoring — expanding',badge:'new',sizes:[
+    {s:'M8×75',p:25},{s:'M10×100',p:40},{s:'M12×120',p:65},{s:'M16×150',p:100},{s:'M20×200',p:160}
+  ]},
+  {id:'s1',cat:'screws',icon:'🪛',name:'Self-Tapping Screw',sub:'Pan head, zinc plated — per pc',badge:'',sizes:[
+    {s:'No.6×½"',p:1},{s:'No.6×1"',p:1.5},{s:'No.8×½"',p:1.5},{s:'No.8×1"',p:2},{s:'No.10×1"',p:2.5},{s:'No.10×1½"',p:3},{s:'No.12×1½"',p:4},{s:'No.14×2"',p:5}
+  ]},
+  {id:'s2',cat:'screws',icon:'🪛',name:'Tek Screw (Hex Head)',sub:'Metal to metal, drill point',badge:'hot',sizes:[
+    {s:'10-16×16',p:3},{s:'10-16×25',p:4},{s:'10-16×32',p:5},{s:'10-16×50',p:8},{s:'12-24×25',p:5},{s:'12-24×50',p:9}
+  ]},
+  {id:'s3',cat:'screws',icon:'🪛',name:'Wood Screw (CSK)',sub:'Countersunk, coarse thread',badge:'',sizes:[
+    {s:'1½"',p:1.5},{s:'2"',p:2},{s:'2½"',p:2.5},{s:'3"',p:3},{s:'3½"',p:4},{s:'4"',p:5}
+  ]},
+  {id:'w1',cat:'washers',icon:'🔘',name:'Flat Washer',sub:'Zinc plated mild steel',badge:'',sizes:[
+    {s:'M6',p:1},{s:'M8',p:1.5},{s:'M10',p:2},{s:'M12',p:3},{s:'M16',p:5},{s:'M20',p:8},{s:'M24',p:12},{s:'M30',p:20},{s:'M36',p:32}
+  ]},
+  {id:'w2',cat:'washers',icon:'🔘',name:'Spring Washer',sub:'Split ring — prevents loosening',badge:'',sizes:[
+    {s:'M6',p:1.5},{s:'M8',p:2},{s:'M10',p:3},{s:'M12',p:5},{s:'M16',p:8},{s:'M20',p:14},{s:'M24',p:22}
+  ]},
+  {id:'w3',cat:'washers',icon:'🔘',name:'Large OD (Penny) Washer',sub:'Wide bearing area, thick',badge:'',sizes:[
+    {s:'M8',p:3},{s:'M10',p:5},{s:'M12',p:8},{s:'M16',p:14},{s:'M20',p:22},{s:'M24',p:35}
+  ]},
+  {id:'c1',cat:'cable-ties',icon:'🔗',name:'Cable Tie (Natural)',sub:'Nylon PA66 — pack of 100',badge:'',sizes:[
+    {s:'100mm',p:1.5},{s:'150mm',p:2},{s:'200mm',p:2.5},{s:'250mm',p:3.5},{s:'300mm',p:4.5},{s:'400mm',p:6}
+  ]},
+  {id:'c2',cat:'cable-ties',icon:'🔗',name:'Cable Tie (Black UV)',sub:'UV stabilised outdoor use — pk/100',badge:'hot',sizes:[
+    {s:'100mm',p:2},{s:'150mm',p:2.5},{s:'200mm',p:3.5},{s:'300mm',p:5.5},{s:'400mm',p:7.5}
+  ]},
+  {id:'c3',cat:'cable-ties',icon:'🔗',name:'Heavy Duty Cable Tie',sub:'50lb+ tensile — pack of 50',badge:'',sizes:[
+    {s:'300mm',p:8},{s:'450mm',p:12},{s:'550mm',p:18},{s:'700mm',p:25}
+  ]},
+  {id:'d1',cat:'drill-bits',icon:'🔧',name:'HSS Twist Drill Bit',sub:'High speed steel DIN338',badge:'',sizes:[
+    {s:'3mm',p:45},{s:'4mm',p:55},{s:'5mm',p:70},{s:'6mm',p:90},{s:'7mm',p:115},{s:'8mm',p:140},{s:'9mm',p:175},{s:'10mm',p:210},{s:'12mm',p:320},{s:'14mm',p:430}
+  ]},
+  {id:'d2',cat:'drill-bits',icon:'🔧',name:'Masonry SDS Drill Bit',sub:'Tungsten carbide tip — concrete',badge:'hot',sizes:[
+    {s:'5mm',p:60},{s:'6mm',p:80},{s:'8mm',p:120},{s:'10mm',p:180},{s:'12mm',p:260},{s:'14mm',p:380},{s:'16mm',p:520},{s:'18mm',p:690},{s:'20mm',p:890}
+  ]},
+  {id:'d3',cat:'drill-bits',icon:'🔧',name:'Step Drill Bit (HSS)',sub:'Multi-size conical — titanium coated',badge:'new',sizes:[
+    {s:'4–12mm',p:480},{s:'4–20mm',p:650},{s:'4–32mm',p:890}
+  ]},
+  {id:'g1',cat:'grinding',icon:'💿',name:'Grinding Disc',sub:'A24RBF Aluminium oxide — metal',badge:'',sizes:[
+    {s:'4" (100mm)',p:95},{s:'4.5" (115mm)',p:110},{s:'5" (125mm)',p:145},{s:'7" (180mm)',p:220},{s:'9" (230mm)',p:350}
+  ]},
+  {id:'g2',cat:'grinding',icon:'💿',name:'Cutting Disc (Thin)',sub:'1mm / 2mm — inox & metal',badge:'hot',sizes:[
+    {s:'4" (100mm)',p:75},{s:'4.5" (115mm)',p:90},{s:'5" (125mm)',p:120},{s:'7" (180mm)',p:185},{s:'9" (230mm)',p:290}
+  ]},
+  {id:'g3',cat:'grinding',icon:'💿',name:'Flap Disc',sub:'Zirconia alumina — stainless steel',badge:'new',sizes:[
+    {s:'4.5" (115mm)',p:180},{s:'5" (125mm)',p:225},{s:'7" (180mm)',p:350},{s:'9" (230mm)',p:520}
+  ]},
+];
+
+let activeCat = 'nuts';
+let activeSizeFilter = '';
+let openProduct = null;
+
+function getCatProducts(cat){ return ALL_PRODUCTS.filter(p=>p.cat===cat); }
+
+function buildSidebar(){
+  const el = document.getElementById('sidebarCat');
+  el.innerHTML = CATS_META.map(c=>`
+    <div class="sidebar-item${c.id===activeCat?' active':''}" onclick="setCat('${c.id}')">
+      <span class="sidebar-item-icon">${c.icon}</span>
+      ${c.label}
+      <span class="sidebar-item-count">${c.count}</span>
+    </div>`).join('<div class="sidebar-divider"></div>');
+}
+
+function buildSizeFilter(products){
+  const sizes = [...new Set(products.flatMap(p=>p.sizes.map(s=>s.s)))];
+  const wrap = document.getElementById('sizeFilterWrap');
+  if(sizes.length === 0){wrap.style.display='none';return;}
+  wrap.style.display='';
+  document.getElementById('sizePills').innerHTML =
+    `<button class="size-pill${activeSizeFilter===''?' active':''}" onclick="setSizeFilter('')">All</button>` +
+    sizes.map(s=>`<button class="size-pill${activeSizeFilter===s?' active':''}" onclick="setSizeFilter('${s}')">${s}</button>`).join('');
+}
+
+function setSizeFilter(s){
+  activeSizeFilter = s;
+  renderProducts();
+}
+
+function renderProducts(){
+  let prods = getCatProducts(activeCat);
+  if(activeSizeFilter){
+    prods = prods.filter(p=>p.sizes.some(s=>s.s===activeSizeFilter));
+  }
+  document.getElementById('resultCount').textContent = prods.length;
+  document.getElementById('currentCatName').textContent = CATS_META.find(c=>c.id===activeCat)?.label||'';
+  buildSizeFilter(getCatProducts(activeCat));
+
+  const grid = document.getElementById('prodGrid');
+  grid.innerHTML = prods.map(p=>{
+    const visibleSizes = p.sizes.slice(0,4);
+    const more = p.sizes.length - 4;
+    const lowestPrice = Math.min(...p.sizes.map(s=>s.p));
+    return `<div class="prod-card" onclick="openModal('${p.id}')">
+      <div class="prod-card-img">
+        <span>${p.icon}</span>
+        ${p.badge==='hot'?'<span class="prod-card-badge badge-hot">Popular</span>':p.badge==='new'?'<span class="prod-card-badge badge-new">New</span>':''}
+      </div>
+      <div class="prod-body">
+        <div class="prod-cat-tag">${CATS_META.find(c=>c.id===p.cat)?.label||''}</div>
+        <div class="prod-name">${p.name}</div>
+        <div class="prod-sub-text">${p.sub}</div>
+        <div class="prod-size-row">
+          ${visibleSizes.map(s=>`<span class="prod-size-tag">${s.s}</span>`).join('')}
+          ${more>0?`<span class="prod-size-more">+${more} more</span>`:''}
+        </div>
+        <div class="prod-footer">
+          <div class="prod-price">Rs. ${lowestPrice}<span> /pc</span></div>
+          <button class="prod-btn" onclick="event.stopPropagation();openModal('${p.id}')">All Sizes</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function setCat(catId, navEl){
+  activeCat = catId;
+  activeSizeFilter = '';
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  const navItems = document.querySelectorAll('.nav-item');
+  const idx = CATS_META.findIndex(c=>c.id===catId);
+  if(navItems[idx]) navItems[idx].classList.add('active');
+  buildSidebar();
+  renderProducts();
+}
+
+function openModal(prodId){
+  const p = ALL_PRODUCTS.find(x=>x.id===prodId);
+  if(!p) return;
+  openProduct = p;
+  document.getElementById('modalIcon').textContent = p.icon;
+  document.getElementById('modalTitle').textContent = p.name;
+  document.getElementById('modalSub').textContent = p.sub;
+  const tbody = document.getElementById('modalTbody');
+  tbody.innerHTML = p.sizes.map(s=>`<tr>
+    <td><span class="tag-size">${s.s}</span></td>
+    <td class="col-price">Rs. ${s.p}</td>
+    <td class="col-unit">per piece</td>
+    <td class="col-stock">✓ In Stock</td>
+    <td class="col-action">
+      <button class="size-quote-btn" onclick="addToQuote('${p.name}','${s.s}')">Quote</button>
+      <button class="size-wa-btn" onclick="orderWA('${p.name}','${s.s}',${s.p})">WA</button>
+    </td>
+  </tr>`).join('');
+  document.getElementById('modalOverlay').classList.remove('hidden');
+}
+
+function closeModal(e){
+  if(e.target.id==='modalOverlay') document.getElementById('modalOverlay').classList.add('hidden');
+}
+
+function addToQuote(prod,size){
+  document.getElementById('modalOverlay').classList.add('hidden');
+  document.getElementById('quoteSection').scrollIntoView({behavior:'smooth'});
+  setTimeout(()=>addRow(prod,size),500);
+}
+
+function orderWA(prod,size,price){
+  const msg = encodeURIComponent(`Hi MT Hardware! I want to order:\n\nProduct: ${prod}\nSize: ${size}\nPrice: Rs. ${price}/pc\n\nPlease confirm availability and delivery.`);
+  window.open(`https://wa.me/94XXXXXXXXX?text=${msg}`,'_blank');
+}
+
+function openWA(){ window.open('https://wa.me/94XXXXXXXXX?text=Hi%20MT%20Hardware!%20I%20would%20like%20to%20place%20an%20order.','_blank'); }
+
+let rowCount=0;
+function addRow(product='',size=''){
+  rowCount++;
+  const div=document.createElement('div');
+  div.className='q-item-row';div.id='qr'+rowCount;
+  const opts=ALL_PRODUCTS.map(p=>p.name).filter((v,i,a)=>a.indexOf(v)===i)
+    .map(n=>`<option${n===product?' selected':''}>${n}</option>`).join('');
+  div.innerHTML=`
+    <div class="q-group"><label>Product</label><select><option value="">Select…</option>${opts}</select></div>
+    <div class="q-group"><label>Size</label><input type="text" placeholder="e.g. M10" value="${size}"></div>
+    <div class="q-group"><label>Qty</label><input type="number" placeholder="50" min="1"></div>
+    <button class="btn-rm" onclick="document.getElementById('qr${rowCount}').remove()" title="Remove">✕</button>`;
+  document.getElementById('itemRows').appendChild(div);
+}
+
+function submitQuote(){
+  const n=document.getElementById('qName').value.trim();
+  const p=document.getElementById('qPhone').value.trim();
+  if(!n||!p){alert('Please enter your name and phone number.');return;}
+  const t=document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),4000);
+}
+
+function handleSearch(val){
+  if(!val.trim()){renderProducts();return;}
+  const q=val.toLowerCase();
+  const results = ALL_PRODUCTS.filter(p=>
+    p.name.toLowerCase().includes(q)||
+    p.sub.toLowerCase().includes(q)||
+    p.sizes.some(s=>s.s.toLowerCase().includes(q))||
+    CATS_META.find(c=>c.id===p.cat)?.label.toLowerCase().includes(q)
+  );
+  document.getElementById('resultCount').textContent=results.length;
+  document.getElementById('currentCatName').textContent=`"${val}"`;
+  document.getElementById('sizeFilterWrap').style.display='none';
+  const grid=document.getElementById('prodGrid');
+  if(!results.length){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;color:#9CA3AF">No products found. Try a different search.</div>';return;}
+  grid.innerHTML=results.map(p=>{
+    const lowestPrice=Math.min(...p.sizes.map(s=>s.p));
+    const visibleSizes=p.sizes.slice(0,3);
+    const more=p.sizes.length-3;
+    return `<div class="prod-card" onclick="openModal('${p.id}')">
+      <div class="prod-card-img"><span>${p.icon}</span>${p.badge==='hot'?'<span class="prod-card-badge badge-hot">Popular</span>':''}</div>
+      <div class="prod-body">
+        <div class="prod-cat-tag">${CATS_META.find(c=>c.id===p.cat)?.label||''}</div>
+        <div class="prod-name">${p.name}</div>
+        <div class="prod-sub-text">${p.sub}</div>
+        <div class="prod-size-row">${visibleSizes.map(s=>`<span class="prod-size-tag">${s.s}</span>`).join('')}${more>0?`<span class="prod-size-more">+${more}</span>`:''}</div>
+        <div class="prod-footer"><div class="prod-price">Rs. ${lowestPrice}<span>/pc</span></div><button class="prod-btn" onclick="event.stopPropagation();openModal('${p.id}')">All Sizes</button></div>
+      </div></div>`;
+  }).join('');
+}
+
+// Init
+buildSidebar();
+renderProducts();
+addRow();
+</script>
+</body>
+</html>
