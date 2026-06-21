@@ -1143,6 +1143,47 @@
       }
     }
     @media (max-width: 600px) {
+      .top-bar-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .top-bar-left {
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+        text-align: center;
+      }
+      .top-bar-right {
+        gap: 10px;
+        justify-content: center;
+      }
+      .hero-inner {
+        padding: 40px 20px;
+      }
+      .hero-content h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+      }
+      .hero-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      .hero-cta-row {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .hero-btn-primary, .hero-btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+      .hero-stats {
+        gap: 10px;
+      }
+      .stat-item {
+        flex: 1;
+        align-items: center;
+        padding: 10px;
+      }
       .vehicle-types {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1157,7 +1198,14 @@
       }
       .header-actions {
         width: 100%;
-        justify-content: space-between;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+      }
+      .header-actions .btn {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 12px;
       }
       .modal-grid {
         grid-template-columns: 1fr;
